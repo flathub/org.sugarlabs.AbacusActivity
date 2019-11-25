@@ -224,8 +224,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/tchx84/sugarapp.git",
-                    "tag": "v1.2",
-                    "commit": "5f0ef575ac095112d717800c6a08484d69e7cc82"
+                    "tag": "v1.5",
+                    "commit": "ea6ee3cb3c1289d4112cf5fc6c4db0ab5cd9d8d6"
                 }
             ]
         },
@@ -244,6 +244,10 @@
                 {
                     "type": "patch",
                     "path": "abacus-port.patch"
+                },
+                {
+                    "type": "patch",
+                    "path": "abacus-monitors.patch"
                 },
                 {
                     "type": "patch",

@@ -1,0 +1,71 @@
+diff --git a/AbacusActivity.py b/AbacusActivity.py
+index 23e93ca..f725ab0 100644
+--- a/AbacusActivity.py
++++ b/AbacusActivity.py
+@@ -41,6 +41,7 @@ from abacus_window import Abacus, Custom, MAX_RODS, MAX_TOP, MAX_BOT
+ from toolbar_utils import separator_factory, radio_factory, label_factory, \
+     button_factory, spin_factory
+ 
++from sugarapp.helpers import PrimaryMonitor
+ from sugarapp.widgets import SugarCompatibleActivity
+ from sugarapp.widgets import ExtendedActivityToolbarButton
+ 
+@@ -210,8 +211,8 @@ class AbacusActivity(SugarCompatibleActivity):
+ 
+         # Create a canvas
+         canvas = Gtk.DrawingArea()
+-        canvas.set_size_request(Gdk.Screen.width(),
+-                                Gdk.Screen.height())
++        canvas.set_size_request(PrimaryMonitor.width(),
++                                PrimaryMonitor.height())
+         self.set_canvas(canvas)
+         canvas.show()
+         self.show_all()
+diff --git a/abacus_window.py b/abacus_window.py
+index 5f5d298..5c6958a 100644
+--- a/abacus_window.py
++++ b/abacus_window.py
+@@ -34,6 +34,8 @@ except ImportError:
+ 
+ from sprites import Sprites, Sprite
+ 
++from sugarapp.helpers import PrimaryMonitor
++
+ INSTANCE = 0
+ CLASS = 1
+ MAX_RODS = 18
+@@ -763,11 +765,11 @@ class Abacus():
+         self.canvas.connect('motion-notify-event', self._mouse_move_cb)
+         self.canvas.connect('key_press_event', self._keypress_cb)
+         Gdk.Screen.get_default().connect('size-changed', self._configure_cb)
+-        self.width = Gdk.Screen.width()
+-        self.height = Gdk.Screen.height() - GRID_CELL_SIZE
++        self.width = PrimaryMonitor.width()
++        self.height = PrimaryMonitor.height() - GRID_CELL_SIZE
+         self.sprites = Sprites(self.canvas)
+         self.sprites.set_delay(True)
+-        self.scale = 1.33 * Gdk.Screen.height() / 900.0
++        self.scale = 1.33 * PrimaryMonitor.height() / 900.0
+         self.dragpos = 0
+         self.press = None
+         self.last = None
+@@ -832,14 +834,14 @@ class Abacus():
+         self._configure_cb(None)
+ 
+     def _configure_cb(self, event):
+-        self.width = Gdk.Screen.width()
+-        self.height = Gdk.Screen.height() - GRID_CELL_SIZE
++        self.width = PrimaryMonitor.width()
++        self.height = PrimaryMonitor.height() - GRID_CELL_SIZE
+         if self.width > self.height:
+-            self.scale = 1.33 * Gdk.Screen.height() / 900.0
++            self.scale = 1.33 * PrimaryMonitor.height() / 900.0
+         else:
+-            self.scale = 1.33 * Gdk.Screen.width() / 1200.0
++            self.scale = 1.33 * PrimaryMonitor.width() / 1200.0
+         if self.sugar:
+-            if Gdk.Screen.width() / 14 < style.GRID_CELL_SIZE:
++            if PrimaryMonitor.width() / 14 < style.GRID_CELL_SIZE:
+                 for sep in self.activity.sep:
+                     sep.hide()
+                     sep.props.draw = False
