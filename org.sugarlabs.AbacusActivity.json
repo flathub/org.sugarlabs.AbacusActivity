@@ -26,6 +26,8 @@
         "/share/man"
     ],
     "modules": [
+        "shared-modules/intltool/intltool-0.51.json",
+        "shared-modules/dbus-glib/dbus-glib-0.110.json",
         {
             "name": "empy",
             "cleanup": [ "*" ],
@@ -89,17 +91,6 @@
             ]
         },
         {
-            "name": "intltool",
-            "cleanup": [ "*" ],
-            "sources": [
-                {
-                  "type": "archive",
-                  "url": "https://launchpad.net/intltool/trunk/0.51.0/+download/intltool-0.51.0.tar.gz",
-                  "sha256": "67c74d94196b153b774ab9f89b2fa6c6ba79352407037c8c14d5aeb334e959cd"
-                }
-            ]
-        },
-        {
             "name": "sugar-artwork",
             "no-parallel-make": true,
             "sources": [
@@ -158,29 +149,6 @@
                     "type": "file",
                     "url": "https://files.pythonhosted.org/packages/dd/bf/4138e7bfb757de47d1f4b6994648ec67a51efe58fa907c1e11e350cddfca/six-1.12.0.tar.gz",
                     "sha256": "d16a0141ec1a18405cd4ce8b4613101da75da0e9a7aec5bdd4fa804d0e0eba73"
-                }
-            ]
-        },
-        {
-            "name": "dbus-glib",
-            "cleanup": [
-                "*.la",
-                "/bin",
-                "/etc",
-                "/include",
-                "/libexec",
-                "/share/gtk-doc",
-                "/share/man"
-            ],
-            "config-opts": [
-                "--disable-static",
-                "--disable-gtk-doc"
-            ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://dbus.freedesktop.org/releases/dbus-glib/dbus-glib-0.110.tar.gz",
-                    "sha256": "7ce4760cf66c69148f6bd6c92feaabb8812dee30846b24cd0f7395c436d7e825"
                 }
             ]
         },
