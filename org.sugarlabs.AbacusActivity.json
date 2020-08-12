@@ -6,11 +6,6 @@
     "runtime-version": "3.36",
     "sdk": "org.gnome.Sdk",
     "separate-locales": false,
-    "build-options": {
-        "env": {
-            "PERL5LIB": "/app/lib/perl5/site_perl/5.30.0/"
-        }
-    },
     "command": "sugarapp",
     "finish-args": [
         "--socket=x11",
@@ -19,13 +14,6 @@
         "--device=dri",
         "--env=SUGAR_BUNDLE_ID=org.sugarlabs.AbacusActivity",
         "--env=SUGAR_BUNDLE_PATH=/app/share/sugar/activities/Abacus.activity"
-    ],
-    "cleanup": [
-        "/include",
-        "/lib/pkgconfig",
-        "/share/aclocal",
-        "/share/info",
-        "/share/man"
     ],
     "modules": [
         {
