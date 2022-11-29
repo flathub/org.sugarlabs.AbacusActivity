@@ -22,7 +22,7 @@ index 23e93ca..f725ab0 100644
          canvas.show()
          self.show_all()
 diff --git a/abacus_window.py b/abacus_window.py
-index 5f5d298..5c6958a 100644
+index 1f93395..db7af5d 100644
 --- a/abacus_window.py
 +++ b/abacus_window.py
 @@ -34,6 +34,8 @@ except ImportError:
@@ -34,7 +34,7 @@ index 5f5d298..5c6958a 100644
  INSTANCE = 0
  CLASS = 1
  MAX_RODS = 18
-@@ -763,11 +765,11 @@ class Abacus():
+@@ -771,11 +773,11 @@ class Abacus():
          self.canvas.connect('motion-notify-event', self._mouse_move_cb)
          self.canvas.connect('key_press_event', self._keypress_cb)
          Gdk.Screen.get_default().connect('size-changed', self._configure_cb)
@@ -49,7 +49,7 @@ index 5f5d298..5c6958a 100644
          self.dragpos = 0
          self.press = None
          self.last = None
-@@ -832,14 +834,14 @@ class Abacus():
+@@ -840,14 +842,14 @@ class Abacus():
          self._configure_cb(None)
  
      def _configure_cb(self, event):
