@@ -1,11 +1,11 @@
 diff --git a/activity/activity.info b/activity/activity.info
-index 369ef9c..1eb82d6 100644
+index 2395d5b..e4af0aa 100644
 --- a/activity/activity.info
 +++ b/activity/activity.info
 @@ -1,7 +1,10 @@
  [Activity]
  name = Abacus
- activity_version = 61
+ activity_version = 62
 +release_date = 2020-01-21
  license = GPLv3+
 +metadata_license = CC0-1.0
