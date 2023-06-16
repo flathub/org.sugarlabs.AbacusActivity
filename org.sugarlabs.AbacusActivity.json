@@ -26,8 +26,12 @@
                 {
                     "type": "git",
                     "url": "https://github.com/sugarlabs/activity-abacus.git",
-                    "tag": "v61",
-                    "commit": "08ea8d139d9e069398b4bfbe0bb5303cc8ff184d"
+                    "tag": "v62",
+                    "commit": "64ae19e0fbd265bb9f37d2e6da4576601046b0cf",
+                    "x-checker-data": {
+                        "type": "git",
+                        "tag-pattern": "^v([\\d.]+)$"
+                    }
                 },
                 {
                     "type": "patch",
